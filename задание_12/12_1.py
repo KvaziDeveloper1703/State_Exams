@@ -1,28 +1,36 @@
 '''
-Исполнитель "Редактор" работает со строкой, состоящей из цифр, и может выполнять две команды (в обеих командах v и w — цепочки цифр):
-1)  заменить(v, w) — заменяет первое слева вхождение подстроки v на подстроку w.
-    Например, заменить(111, 27) преобразует строку 05111150 в 0527150.
-    Если v не встречается в строке, строка остаётся без изменений.
+Дана строка, состоящая из 68 подряд идущих цифр 8 (то есть "8888...88", 68 символов).
+Выполняется следующий алгоритм:
 
-2)  нашлось(v) — проверяет, встречается ли в строке цепочка v.
-    Возвращает логическое значение: истина, если v есть в строке, иначе ложь.
-    Строка при этом не изменяется.
+НАЧАЛО
 
-Также используются конструкции управления:
-+ ПОКА условие / КОНЕЦ ПОКА — цикл выполняется, пока условие истинно;
-+ ЕСЛИ условие / ТО / ИНАЧЕ / КОНЕЦ ЕСЛИ — условное выполнение команд.
+ПОКА в строке встречается "222" ИЛИ "888":
+    ЕСЛИ в строке есть "222":
+        заменить первое вхождение "222" на "8"
+    ИНАЧЕ:
+        заменить первое вхождение "888" на "2"
+КОНЕЦ ПОКА
+КОНЕЦ
 
-The Editor program processes a string of digits using two types of commands (where v and w are digit sequences):
-1)  replace(v, w) — replaces the first occurrence of substring v from the left with substring w.
-    Example: replace(111, 27) turns "05111150" into "0527150".
-    If the substring v does not exist in the string, no changes are made.
+Заменяются первые вхождения подстрок. Нужно определить, какая строка получится после завершения всех замен.
+В ответе нужно просто записать финальную строку.
 
-2)  found(v) — checks whether the substring v is present in the string.
-    Returns true if found, false otherwise. The string itself remains unchanged.
+A string is given, consisting of 68 consecutive digits 8 (i.e., "8888...88", 68 characters long).
+The following algorithm is applied:
 
-Control structures used:
-+ WHILE condition / END WHILE — repeats the block as long as the condition is true.
-+ IF condition / THEN / ELSE / END IF — executes one of two commands based on whether the condition is true or false.
+START
+
+WHILE the string contains "222" OR "888":
+    IF the string contains "222":
+        replace the first occurrence of "222" with "8"
+    ELSE:
+        replace the first occurrence of "888" with "2"
+END WHILE
+END
+
+Each time, only the first occurrence of the target substring is replaced.
+You need to determine what the final string looks like after all replacements are completed.
+Write only the resulting string as your answer.
 '''
 
 sequence = '8' * 68
